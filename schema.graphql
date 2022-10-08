@@ -1,0 +1,24 @@
+type News {
+	id: Int
+	judul: String
+	author: String
+	artikel: String
+}
+type Comment {
+	id: Int
+	idnews: Int
+	nama: String
+	komentar: String
+}
+type Query {
+	news: [News]
+	comment: [Comment]
+}
+type Mutation {
+	createNews(judul: String, author: String, artikel: String): News,
+	getNews(id: Int): News,
+	getComment(id: Int): Comment,
+	updateNews(id: Int, judul: String, author: String, artikel: String): News,
+	deleteNews(id: Int): News,
+	comment(idnews: Int, nama: String, komentar: String): Comment
+}
